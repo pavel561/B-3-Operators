@@ -409,15 +409,51 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P8_9_CircleArea()
         {
-
-        }
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B3_P8_9_CircleArea");
+			Console.WriteLine("Программа для расчета площади куга по известному радиусу");
+			Console.WriteLine("");
+			Console.Write("Введите радиус, м >> ");
+			double radius = Convert.ToDouble(Console.ReadLine());
+			double circleArea = Math.PI * radius * radius;
+			//double circleArea = Math.PI * Math.Sqrt(radius);
+			Console.WriteLine($"Площать круга с радиусом {radius} м, составяет {circleArea} м^2");
+		}
 
         /// <summary>
         /// B3-P9/9. CreaditCalculator.Написать программу - калькулятор кредита на 1 год.
         /// </summary>
         public static void B3_P9_9_CreaditCalculator()
         {
-
-        }
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B3_P9_9_CreaditCalculator");
+			Console.WriteLine("Программа для расчета кредита");
+			Console.WriteLine("");
+			int creditMaturity;			//срок погашения кредита, мес.
+			double creditAmount;		//Суммма кредита, руб.
+			double interestRate;        //Процентная ставка, %
+			double monthlyPayment;      //Ежемесячный платеж, руб.
+			double loanInterest = 0;	//Проценты по кредиту, руб.
+			Console.Write("Введите сумму кредита, руб.BYN >> ");
+			creditAmount = Convert.ToDouble(Console.ReadLine());
+			Console.Write("Введите процентную ставку, % >> ");
+			interestRate = Convert.ToDouble(Console.ReadLine());
+			Console.Write("Введите срок погашения кредита, мес. >> ");
+			creditMaturity = Convert.ToInt32(Console.ReadLine());
+			double ood = creditAmount;	//Остаток основного долга
+			double delta = creditAmount / creditMaturity;	//сумма кредита за каждый месяц
+			for (int i=1;i<= creditMaturity;i++)
+			{
+				loanInterest += ood * interestRate * 0.01 / 12;
+				ood -= delta;
+			}
+			monthlyPayment = (loanInterest + creditAmount) / creditMaturity;
+			Console.WriteLine($"Сумма кредита {Math.Round(creditAmount, 2)} руб.");
+			Console.WriteLine($"Сумма процентов по кредиту {Math.Round(loanInterest, 2)} руб.");
+			Console.WriteLine($"Сумма результирующего долга перед банком {Math.Round(loanInterest + creditAmount,2)} руб.");
+			Console.WriteLine($"Сумма ежемесячного платежа {Math.Round(monthlyPayment, 2)} руб.");
+		}
     }
 }
