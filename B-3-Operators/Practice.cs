@@ -24,8 +24,7 @@ namespace B_3_Operators
 			int number2 = Convert.ToInt32(Console.ReadLine());
 			int result = number1 + number2;
 			Console.WriteLine($"Результат суммирования чисел {number1} и {number2} >> {result} ");
-
-
+			Console.ReadKey();
 		}
 
         /// <summary>
@@ -38,7 +37,7 @@ namespace B_3_Operators
 			Console.WriteLine("");
 			Console.WriteLine("====================================");
 			Console.WriteLine("B3_P2_9_CheckResultAddition");
-			Console.WriteLine("Программа для суммирования числел с запросом результата");
+			Console.WriteLine("Программа для суммирования чисел с запросом результата");
 			Console.WriteLine("");
 			Console.Write("Введите первое число >> ");
 			int number1 = Convert.ToInt32(Console.ReadLine());
@@ -55,7 +54,7 @@ namespace B_3_Operators
 			{
 				Console.WriteLine($"Неверно");
 			}
-			
+			Console.ReadKey();
 		}
 
         /// <summary>
@@ -65,8 +64,36 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P3_9_CheckResultAdditionWithTips()
         {
-
-        }
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B3_P2_9_CheckResultAddition");
+			Console.WriteLine("Программа для суммирования чисел с запросом результата и проверкой больше-меньше");
+			Console.WriteLine("");
+			Console.Write("Введите первое число >> ");
+			int number1 = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Введите второе число >> ");
+			int number2 = Convert.ToInt32(Console.ReadLine());
+			int result = number1 + number2;
+			Console.Write("Введите предполагаемый результат вычисления >> ");
+			int userResult = Convert.ToInt32(Console.ReadLine());
+			if (userResult == result)
+			{
+				Console.WriteLine($"Верно");
+			}
+			else
+			{
+				Console.Write($"Неверно. ");
+				if(userResult>result)
+				{
+					Console.WriteLine($"Ожидается число меньше указанного");
+				}
+				else
+				{
+					Console.WriteLine($"Ожидается число больше указанного");
+				}
+			}
+			Console.ReadKey();
+		}
 
         /// <summary>
         /// B3-P4/9. CheckResultWithOperator. Изменить предыдущий алгоритм. 

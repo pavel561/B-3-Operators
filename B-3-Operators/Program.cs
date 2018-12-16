@@ -20,7 +20,7 @@ namespace B_3_Operators
 
 			Practice.B3_P1_9_NumbersAddition();
             Practice.B3_P2_9_CheckResultAddition();
-            //Practice.B3_P3_9_CheckResultAdditionWithTips();
+            Practice.B3_P3_9_CheckResultAdditionWithTips();
             //Practice.B3_P4_9_CheckResultWithOperator();
             //Practice.B3_P5_9_CheckResultWithAttemps();
             //Practice.B3_P6_9_FiveNumbersAddition();
