@@ -66,7 +66,7 @@ namespace B_3_Operators
         {
 			Console.WriteLine("");
 			Console.WriteLine("====================================");
-			Console.WriteLine("B3_P2_9_CheckResultAddition");
+			Console.WriteLine("B3_P3_9_CheckResultAdditionWithTipsn");
 			Console.WriteLine("Программа для суммирования чисел с запросом результата и проверкой больше-меньше");
 			Console.WriteLine("");
 			Console.Write("Введите первое число >> ");
@@ -103,7 +103,7 @@ namespace B_3_Operators
         {
 			Console.WriteLine("");
 			Console.WriteLine("====================================");
-			Console.WriteLine("B3_P2_9_CheckResultAddition");
+			Console.WriteLine("B3_P4_9_CheckResultWithOperator");
 			Console.WriteLine("Программа для сложения и вычитания чисел с запросом результата и проверкой больше-меньше");
 			Console.WriteLine("");
 			Console.Write("Введите первое число >> ");
@@ -170,8 +170,9 @@ namespace B_3_Operators
         {
 			Console.WriteLine("");
 			Console.WriteLine("====================================");
-			Console.WriteLine("B3_P2_9_CheckResultAddition");
+			Console.WriteLine("B3_P5_9_CheckResultWithAttemps");
 			Console.WriteLine("Программа для сложения и вычитания чисел с запросом результата и проверкой больше-меньше");
+			Console.WriteLine("Даетсяя 3 попытки на правильный ответ");
 			Console.WriteLine("");
 			Console.Write("Введите первое число >> ");
 			int number1 = Convert.ToInt32(Console.ReadLine());
@@ -242,8 +243,9 @@ namespace B_3_Operators
         {
 			Console.WriteLine("");
 			Console.WriteLine("====================================");
-			Console.WriteLine("B3_P2_9_CheckResultAddition");
-			Console.WriteLine("Программа для сложения и вычитания чисел с запросом результата и проверкой больше-меньше");
+			Console.WriteLine("B3_P6_9_FiveNumbersAddition");
+			Console.WriteLine("Программа для сложения и вычитания пяти чисел ");
+			Console.WriteLine("с запросом результата и проверкой больше-меньше "); 
 			Console.WriteLine("");
 			Console.Write("Введите первое число >> ");
 			int number1 = Convert.ToInt32(Console.ReadLine());
@@ -318,8 +320,89 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P7_9_NumbersResultWithInfoIfCorrect()
         {
+			bool answerIsCorrect = false;
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B3_P7_9_NumbersResultWithInfoIfCorrect");
+			Console.WriteLine("Программа для сложения и вычитания пяти чисел ");
+			Console.WriteLine("с запросом результата и проверкой больше-меньше ");
+			Console.WriteLine("");
+			Console.Write("Введите первое число >> ");
+			int number1 = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Введите второе число >> ");
+			int number2 = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Введите третье число >> ");
+			int number3 = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Введите четвертое число >> ");
+			int number4 = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Введите пятое число >> ");
+			int number5 = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Введите знак операции >> ");
+			char operationMark = Console.ReadKey().KeyChar;
+			Console.WriteLine("");
+			int result = 0;
+			switch (operationMark)
+			{
+				case ('+'):
+					{
+						result = number1 + number2 + number3 + number4 + number5;
+						break;
+					}
+				case ('-'):
+					{
+						result = number1 - number2 - number3 - number4 - number5;
+						break;
+					}
+				default:
+					{
+						break;
+					}
+			}
+			int attempts = 3;
+			while (true)
+			{
+				if (attempts != 0)
+				{
+					Console.Write("Введите предполагаемый результат вычисления >> ");
+					int userResult = Convert.ToInt32(Console.ReadLine());
+					if (userResult == result)
+					{
+						Console.WriteLine($"Верно");
+						answerIsCorrect = true;
+						break;
+					}
+					else
+					{
+						attempts--;
+						answerIsCorrect = false;
+						Console.Write($"Неверно. ");
+						if (userResult > result)
+						{
+							Console.WriteLine($"Ожидается число меньше указанного");
+						}
+						else
+						{
+							Console.WriteLine($"Ожидается число больше указанного");
+						}
+					}
 
-        }
+				}
+				else
+				{
+					Console.WriteLine($"Вы исчерпали число попыток");
+					break;
+				}
+			}
+			if (answerIsCorrect == true)
+			{
+				Console.WriteLine($"Ответ пользователя был верным");
+			}
+			else
+			{
+				Console.WriteLine($"Ответ пользователя был ошибочным");
+			}
+			Console.ReadKey();
+		}
 
         /// <summary>
         /// B3-P8/9. CircleArea. Написать алгоритм, рассчитывающий площадь круга по заданному радиусу. 
