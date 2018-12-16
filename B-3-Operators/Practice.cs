@@ -13,8 +13,20 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P1_9_NumbersAddition()
         {
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B3_P1_9_NumbersAddition");
+			Console.WriteLine("Программа для суммирования чисел");
+			Console.WriteLine("");
+			Console.Write("Введите первое число >> ");
+			int number1 = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Введите второе число >> ");
+			int number2 = Convert.ToInt32(Console.ReadLine());
+			int result = number1 + number2;
+			Console.WriteLine($"Результат суммирования чисел {number1} и {number2} >> {result} ");
 
-        }
+
+		}
 
         /// <summary>
         /// B3-P2/9. CheckResultAddition. Изменить предыдущий алгоритм. 
@@ -23,8 +35,28 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P2_9_CheckResultAddition()
         {
-
-        }
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B3_P2_9_CheckResultAddition");
+			Console.WriteLine("Программа для суммирования числел с запросом результата");
+			Console.WriteLine("");
+			Console.Write("Введите первое число >> ");
+			int number1 = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Введите второе число >> ");
+			int number2 = Convert.ToInt32(Console.ReadLine());
+			int result = number1 + number2;
+			Console.Write("Введите предполагаемый результат вычисления >> ");
+			int userResult = Convert.ToInt32(Console.ReadLine());
+			if(userResult == result)
+			{
+				Console.WriteLine($"Верно");
+			}
+			else
+			{
+				Console.WriteLine($"Неверно");
+			}
+			
+		}
 
         /// <summary>
         /// B3-P3/9. CheckResultAdditionWithTips. Изменить предыдущий алгоритм. 
